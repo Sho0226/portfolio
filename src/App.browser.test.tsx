@@ -10,3 +10,17 @@ test('ユーザーがポートフォリオを開いたとき、アクセシビ�
 
   expect(results).toHaveNoViolations();
 });
+
+test('ユーザーがダークモードに切り替えたとき、アクセシビリティ違反がない', async () => {
+  const screen = await render(<App />);
+
+  await screen.getByRole('button', { name: 'ダークモード' }).click();
+  await expect.element(screen.getByRole('button', { name: 'ダークモード' })).toHaveAttribute(
+    'aria-pressed',
+    'true',
+  );
+
+  const results = await axe.run(screen.container);
+
+  expect(results).toHaveNoViolations();
+});

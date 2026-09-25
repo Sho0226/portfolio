@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a" />
     <meta
       name="description"
       content="Sho Katsumata's Portfolio - Frontend Developer"
@@ -35,6 +36,21 @@
       content="https://portfolio.sho-hono-app.workers.dev/ogp.png"
     />
     <title>Sho Katsumata | Portfolio</title>
+    <script>
+      // Paint the stored (or OS) theme before first paint so the page never
+      // flashes light on the way to dark. Mirrors src/lib/theme.ts.
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var dark =
+            stored === 'dark' ||
+            (stored !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.classList.toggle('dark', dark);
+        } catch (error) {
+          /* No storage, no preference: the stylesheet default (light) stands. */
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

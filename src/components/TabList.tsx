@@ -49,8 +49,8 @@ export default function TabList<K extends string>({
           onKeyDown={(event) => handleKeyDown(event, index)}
           className={`px-4 py-2 text-sm tracking-widest uppercase transition-colors ${
             active === key
-              ? 'bg-black text-white'
-              : 'border border-black/15 text-black/60 hover:border-black hover:text-black'
+              ? 'bg-black text-white dark:bg-white dark:text-black'
+              : 'border border-black/15 text-black/60 hover:border-black hover:text-black dark:border-white/15 dark:text-white/60 dark:hover:border-white dark:hover:text-white'
           }`}
         >
           {tabLabel}

@@ -5,17 +5,17 @@ export default function About() {
         <img
           src="/imgs/profile.jpeg"
           alt="Sho Katsumata"
-          className="mx-auto h-48 w-48 rounded-full object-cover ring-1 ring-black/10"
+          className="mx-auto h-48 w-48 rounded-full object-cover ring-1 ring-black/10 dark:ring-white/10"
         />
         <div>
-          <p className="mb-2 text-xs tracking-widest text-black/50 uppercase">About</p>
+          <p className="mb-2 text-xs tracking-widest text-black/50 dark:text-white/50 uppercase">About</p>
           <h2 id="about-heading" className="mb-1 text-3xl font-semibold">
             Sho Katsumata
           </h2>
-          <p className="mb-6 text-sm tracking-widest text-black/50 uppercase">
+          <p className="mb-6 text-sm tracking-widest text-black/50 dark:text-white/50 uppercase">
             Frontend Developer
           </p>
-          <div className="space-y-4 text-base leading-relaxed text-black/80">
+          <div className="space-y-4 text-base leading-relaxed text-black/80 dark:text-white/80">
             <p>
               株式会社PR TIMESに所属するソフトウェアエンジニア。フロントエンド開発をメインに、テストやUI/UX、アクセシビリティに関心があります。
             </p>

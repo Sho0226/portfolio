@@ -11,7 +11,7 @@ const LINKS = [
 
 export default function Contact() {
   return (
-    <footer id="contact" aria-labelledby="contact-heading" className="scroll-mt-20 border-t border-black/10 bg-black text-white">
+    <footer id="contact" aria-labelledby="contact-heading" className="scroll-mt-20 border-t border-black/10 bg-black text-white dark:border-white/10">
       <div className="mx-auto max-w-5xl px-6 py-24">
         <p className="mb-2 text-xs tracking-widest text-white/50 uppercase">Contact</p>
         <h2 id="contact-heading" className="mb-8 text-3xl font-semibold">

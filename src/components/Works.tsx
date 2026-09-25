@@ -20,9 +20,9 @@ export default function Works() {
   const selected = works.find((w) => w.id === selectedId) ?? null;
 
   return (
-    <section id="works" aria-labelledby="works-heading" className="scroll-mt-20 border-t border-black/10">
+    <section id="works" aria-labelledby="works-heading" className="scroll-mt-20 border-t border-black/10 dark:border-white/10">
       <div className="mx-auto max-w-5xl px-6 py-24">
-        <p className="mb-2 text-xs tracking-widest text-black/50 uppercase">Works</p>
+        <p className="mb-2 text-xs tracking-widest text-black/50 dark:text-white/50 uppercase">Works</p>
         <h2 id="works-heading" className="mb-8 text-3xl font-semibold">
           Works
         </h2>
@@ -41,11 +41,11 @@ export default function Works() {
               onClick={() => setSelectedId(work.id)}
               className="group text-left"
             >
-              <div className="overflow-hidden border border-black/10">
+              <div className="overflow-hidden border border-black/10 dark:border-white/10">
                 <img src={work.image} alt="" className="h-40 w-full object-cover" />
               </div>
               <h3 className="mt-3 text-base font-semibold group-hover:underline">{work.name}</h3>
-              <p className="mt-1 text-sm text-black/60">{work.description}</p>
+              <p className="mt-1 text-sm text-black/60 dark:text-white/60">{work.description}</p>
             </button>
           ))}
         </div>

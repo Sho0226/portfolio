@@ -1,7 +1,15 @@
 @import 'tailwindcss';
 
+/* Tailwind's `dark:` variant follows prefers-color-scheme by default. Point it
+   at the class that ThemeToggle sets so an explicit choice can override the OS. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   color-scheme: light;
+}
+
+:root.dark {
+  color-scheme: dark;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -23,7 +31,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+:root.dark body {
+  background: #0a0a0a;
+  color: #f5f5f5;
+}
+
 ::selection {
   background: #0a0a0a;
   color: #ffffff;
+}
+
+:root.dark ::selection {
+  background: #f5f5f5;
+  color: #0a0a0a;
 }
