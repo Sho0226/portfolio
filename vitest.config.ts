@@ -29,6 +29,22 @@ export default defineConfig({
           },
         },
       },
+      {
+        extends: true,
+        test: {
+          name: 'vrt',
+          include: ['src/**/*.vrt.test.tsx'],
+          setupFiles: ['./src/test/vrt-setup.ts'],
+          browser: {
+            enabled: true,
+            provider: playwright(),
+            headless: true,
+            // Baselines are only comparable at a fixed size.
+            viewport: { width: 1280, height: 800 },
+            instances: [{ browser: 'chromium' }],
+          },
+        },
+      },
     ],
   },
 });

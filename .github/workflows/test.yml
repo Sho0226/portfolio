@@ -28,8 +28,30 @@ jobs:
       - name: Run tests (unit + browser a11y)
         run: npm run test
 
+  vrt:
+    runs-on: ubuntu-latest
+    # Same pinned image as scripts/vrt-docker.sh, so the screenshots CI compares
+    # are rendered by exactly the renderer that produced the baselines.
+    container: mcr.microsoft.com/playwright:v1.63.0-noble
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run visual regression tests
+        run: npx vitest run --project vrt
+
+      - name: Upload diffs
+        if: failure()
+        uses: actions/upload-artifact@v5
+        with:
+          name: vrt-diffs
+          path: .vitest/attachments
+          if-no-files-found: ignore
+
   deploy:
-    needs: test
+    needs: [test, vrt]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
