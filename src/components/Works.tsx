@@ -22,7 +22,7 @@ export default function Works() {
   return (
     <section id="works" aria-labelledby="works-heading" className="scroll-mt-20 border-t border-black/10 dark:border-white/10">
       <div className="mx-auto max-w-5xl px-6 py-24">
-        <p className="mb-2 text-xs tracking-widest text-black/50 dark:text-white/50 uppercase">Works</p>
+        <p className="mb-2 text-xs tracking-widest text-black/60 dark:text-white/50 uppercase">Works</p>
         <h2 id="works-heading" className="mb-8 text-3xl font-semibold">
           Works
         </h2>

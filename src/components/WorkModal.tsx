@@ -43,7 +43,7 @@ export default function WorkModal({ work, onClose }: Props) {
           <button
             onClick={() => dialogRef.current?.close()}
             aria-label="閉じる"
-            className="text-black/50 dark:text-white/50 hover:text-black dark:hover:text-white"
+            className="text-black/60 dark:text-white/50 hover:text-black dark:hover:text-white"
           >
             <X aria-hidden="true" className="h-5 w-5" />
           </button>
@@ -67,7 +67,7 @@ export default function WorkModal({ work, onClose }: Props) {
         <div className="space-y-2 text-sm">
           {work.sourceCode && (
             <p>
-              <span className="text-black/50 dark:text-white/50">ソースコード: </span>
+              <span className="text-black/60 dark:text-white/50">ソースコード: </span>
               <a
                 href={work.sourceCode}
                 target="_blank"
@@ -81,7 +81,7 @@ export default function WorkModal({ work, onClose }: Props) {
           )}
           {work.deploy && (
             <p>
-              <span className="text-black/50 dark:text-white/50">デプロイ先: </span>
+              <span className="text-black/60 dark:text-white/50">デプロイ先: </span>
               <a
                 href={work.deploy}
                 target="_blank"
@@ -95,7 +95,7 @@ export default function WorkModal({ work, onClose }: Props) {
           )}
           {work.note && (
             <p>
-              <span className="text-black/50 dark:text-white/50">投稿記事: </span>
+              <span className="text-black/60 dark:text-white/50">投稿記事: </span>
               <a
                 href={work.note}
                 target="_blank"

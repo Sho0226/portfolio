@@ -36,7 +36,7 @@ export default function Contact() {
             </li>
           ))}
         </ul>
-        <p className="mt-16 text-xs text-white/40">&copy; {new Date().getFullYear()} Sho Katsumata</p>
+        <p className="mt-16 text-xs text-white/60">&copy; {new Date().getFullYear()} Sho Katsumata</p>
       </div>
     </footer>
   );
