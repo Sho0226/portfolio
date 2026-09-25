@@ -2,10 +2,16 @@ export default function About() {
   return (
     <section id="about" aria-labelledby="about-heading" className="mx-auto max-w-5xl scroll-mt-20 px-6 py-24">
       <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-[200px_1fr]">
+        {/* Long press on iOS is suppressed by -webkit-touch-callout; Android
+            Chrome ignores that property and needs the contextmenu default
+            cancelled instead. Neither stops anyone determined to fetch the
+            file, they just keep the photo from being dragged out by accident. */}
         <img
           src="/imgs/profile.jpeg"
           alt="Sho Katsumata"
-          className="mx-auto h-48 w-48 rounded-full object-cover ring-1 ring-black/10 dark:ring-white/10"
+          draggable={false}
+          onContextMenu={(event) => event.preventDefault()}
+          className="mx-auto h-48 w-48 rounded-full object-cover ring-1 ring-black/10 select-none [-webkit-touch-callout:none] [-webkit-user-drag:none] dark:ring-white/10"
         />
         <div>
           <p className="mb-2 text-xs tracking-widest text-black/50 dark:text-white/50 uppercase">About</p>
