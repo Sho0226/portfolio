@@ -1,4 +1,4 @@
-export type ArticleLink = {
+type ArticleLink = {
   id: number;
   title: string;
   description: string;
